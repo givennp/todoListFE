@@ -15,15 +15,25 @@ const TodoList = ({ action, status, toggleStatus, deleteTodo }) => {
       <Stack border="1px solid black" width="400px" padding="10px">
         <Flex justifyContent="space-between">
           <Box>
-            <Text fontWeight="bold">{action}</Text>
+            <Text fontWeight="bold" padding="5px">
+              {action}
+            </Text>
             {status ? (
-              <Button onClick={toggleStatus}>done</Button>
+              <Button colorScheme="green" onClick={toggleStatus}>
+                done
+              </Button>
             ) : (
-              <Button onClick={toggleStatus}>not done</Button>
+              <Button colorScheme="red" onClick={toggleStatus}>
+                not done
+              </Button>
             )}
           </Box>
           <Box>
-            <Button onClick={deleteTodo}>Delete</Button>
+            <Flex>
+              <Button colorScheme="red" onClick={deleteTodo}>
+                Delete
+              </Button>
+            </Flex>
           </Box>
         </Flex>
       </Stack>
